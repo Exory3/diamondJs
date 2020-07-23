@@ -25,11 +25,21 @@ $(".demo").diamonds({
 let items = $("a");
 let lightbox = $(".lightbox");
 let lightboxImage = $(".lightboxImage");
-lightboxImage.on("click", () => lightbox.attr('style', 'display: none'));
+let button = $("#close-button");
+button.on("click", () => lightbox.attr('style', 'display: none'));
+
+let currentImageIndex;
+lightboxImage.on("click", ()=> {
+	currentImageIndex = currentImageIndex === picturesList.length ? 0 : currentImageIndex + 1;
+	console.log(currentImageIndex);
+	lightboxImage.attr("src", picturesList[currentImageIndex])
+
+})
 
 for (let i = 0; i < items.length; i++) {
 	items[i].style.backgroundImage = `url(${picturesList[i]})`;
 	items.eq(i).on("click", () => {
+		currentImageIndex = i;
 		lightboxImage.attr("src", picturesList[i]);
 		lightbox.attr('style', 'display: block');
 	});

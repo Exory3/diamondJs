@@ -52,3 +52,6 @@ a {
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
+#close-button {
+	cursor: pointer;
+}
