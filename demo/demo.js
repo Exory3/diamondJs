@@ -1,13 +1,39 @@
 const picturesList = [
-	"https://i.imgur.com/e6Ij0Bl.jpg",
-	"https://i.imgur.com/pMhIsqv.jpg",
-	"https://i.imgur.com/PIPi4C4.jpg",
-	"https://i.imgur.com/8OME5Af.jpg",
-	"https://i.imgur.com/ia8yzTa.jpg",
-	"https://i.imgur.com/W0rqy3I.jpg",
-	"https://i.imgur.com/OTFD2Hx.jpg",
-	"https://i.imgur.com/olNcEUt.jpg",
-	"https://i.imgur.com/SBXwpPg.png"
+	{
+		url:"https://i.imgur.com/e6Ij0Bl.jpg",
+		alt:"girls are like glass of wine"},
+	{
+		url:"https://i.imgur.com/pMhIsqv.jpg",
+		alt:"cars > chicks"
+	},
+	{
+		url:"https://i.imgur.com/PIPi4C4.jpg",
+		alt:"lofi ski-fi wanna be"
+	},
+	{
+		url:"https://i.imgur.com/8OME5Af.jpg",
+		alt: "no heels no fun"
+	},
+	{
+		url:"https://i.imgur.com/ia8yzTa.jpg",
+		alt:"wish i could play with japanese kids"
+	},
+	{
+		url:"https://i.imgur.com/W0rqy3I.jpg",
+		alt:"wish i could play with japanese kids"
+	},
+	{
+		url:"https://i.imgur.com/OTFD2Hx.jpg",
+		alt:"wish i could play with japanese kids"
+	},
+	{
+		url:"https://i.imgur.com/olNcEUt.jpg",
+		alt:"wish i could play with japanese kids"
+	},
+	{
+		url:"https://i.imgur.com/SBXwpPg.png",
+		alt:"wish i could play with japanese kids"
+	},
 ];
 
 for (let i = 0; i < picturesList.length; i++) {
@@ -26,22 +52,26 @@ let items = $("a");
 let lightbox = $(".lightbox");
 let lightboxImage = $(".lightboxImage");
 let button = $("#close-button");
+let textField = $("#alt-text");
 button.on("click", () => lightbox.attr('style', 'display: none'));
 
 let currentImageIndex;
 lightboxImage.on("click", ()=> {
 	currentImageIndex = currentImageIndex === picturesList.length ? 0 : currentImageIndex + 1;
 	console.log(currentImageIndex);
-	lightboxImage.attr("src", picturesList[currentImageIndex])
+	lightboxImage.attr("src", picturesList[currentImageIndex].url)
+	textField.html(picturesList[currentImageIndex].alt)
 
 })
 
 for (let i = 0; i < items.length; i++) {
-	items[i].style.backgroundImage = `url(${picturesList[i]})`;
+	items[i].style.backgroundImage = `url(${picturesList[i].url})`;
 	items.eq(i).on("click", () => {
 		currentImageIndex = i;
-		lightboxImage.attr("src", picturesList[i]);
+		lightboxImage.attr("src", picturesList[i].url);
 		lightbox.attr('style', 'display: block');
+		textField.html(picturesList[i].alt)
+		console.log(picturesList[i].alt)
 	});
 };
 
