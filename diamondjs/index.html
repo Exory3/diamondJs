@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>jquery.diamonds.js demo</title>
 	<link rel="stylesheet" type="text/css" href="../src/diamonds.css" />
-	<link rel="stylesheet" type="text/css" href="demo.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
+
 <body>
 	<div class="lightbox">
-		<img src = "https://i.imgur.com/uUCaRUK.jpg" class="lightboxImage"/>
-		<div id = "alt-text"></div>
-		<button id = "close-button">&#10006</button>	
+		<img class="lightboxImage" src="https://i.imgur.com/uUCaRUK.jpg" />
+		<div class="buttons">
+			<button class="nav-button nav-button-prev">&#8678;</button>
+			<div id="alt-text"></div>
+			<button class="nav-button nav-button-next">&#8680;</button>
+		</div>
 	</div>
 	<div class="demo"></div>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="../src/jquery.diamonds.js"></script>
-	<script type="text/javascript" src="demo.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 </body>
+
 </html>

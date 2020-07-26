@@ -1,38 +1,39 @@
 const picturesList = [
 	{
-		url:"https://i.imgur.com/e6Ij0Bl.jpg",
-		alt:"girls are like glass of wine"},
-	{
-		url:"https://i.imgur.com/pMhIsqv.jpg",
-		alt:"cars > chicks"
+		url: "https://i.imgur.com/e6Ij0Bl.jpg",
+		alt: "girls are like glass of wine"
 	},
 	{
-		url:"https://i.imgur.com/PIPi4C4.jpg",
-		alt:"lofi ski-fi wanna be"
+		url: "https://i.imgur.com/pMhIsqv.jpg",
+		alt: "cars > chicks"
 	},
 	{
-		url:"https://i.imgur.com/8OME5Af.jpg",
+		url: "https://i.imgur.com/PIPi4C4.jpg",
+		alt: "lofi ski-fi wanna be"
+	},
+	{
+		url: "https://i.imgur.com/8OME5Af.jpg",
 		alt: "no heels no fun"
 	},
 	{
-		url:"https://i.imgur.com/ia8yzTa.jpg",
-		alt:"wish i could play with japanese kids"
+		url: "https://i.imgur.com/ia8yzTa.jpg",
+		alt: "wish i could play with japanese kids"
 	},
 	{
-		url:"https://i.imgur.com/W0rqy3I.jpg",
-		alt:"wish i could play with japanese kids"
+		url: "https://i.imgur.com/W0rqy3I.jpg",
+		alt: "altText"
 	},
 	{
-		url:"https://i.imgur.com/OTFD2Hx.jpg",
-		alt:"wish i could play with japanese kids"
+		url: "https://i.imgur.com/OTFD2Hx.jpg",
+		alt: "altText"
 	},
 	{
-		url:"https://i.imgur.com/olNcEUt.jpg",
-		alt:"wish i could play with japanese kids"
+		url: "https://i.imgur.com/olNcEUt.jpg",
+		alt: "altText"
 	},
 	{
-		url:"https://i.imgur.com/SBXwpPg.png",
-		alt:"wish i could play with japanese kids"
+		url: "https://i.imgur.com/SBXwpPg.png",
+		alt: "altText"
 	},
 ];
 
@@ -51,17 +52,26 @@ $(".demo").diamonds({
 let items = $("a");
 let lightbox = $(".lightbox");
 let lightboxImage = $(".lightboxImage");
-let button = $("#close-button");
 let textField = $("#alt-text");
-button.on("click", () => lightbox.attr('style', 'display: none'));
-
+lightbox.on("click", () => lightbox[0].classList.remove("visible"));
 let currentImageIndex;
-lightboxImage.on("click", ()=> {
-	currentImageIndex = currentImageIndex === picturesList.length ? 0 : currentImageIndex + 1;
-	console.log(currentImageIndex);
+
+$(".nav-button").click((e)=> {
+	e.stopPropagation();
+	console.log(e.target);
+	if (e.target.classList.contains("nav-button-next")) {
+		currentImageIndex = currentImageIndex === picturesList.length-1 ? 0 : currentImageIndex + 1;
+	} else if (e.target.classList.contains("nav-button-prev")) {
+		currentImageIndex = currentImageIndex ===  0 ? picturesList.length-1 : currentImageIndex - 1;
+	}
 	lightboxImage.attr("src", picturesList[currentImageIndex].url)
 	textField.html(picturesList[currentImageIndex].alt)
 
+})
+
+lightboxImage.click((e) => {
+	e.stopPropagation();
+	console.log(currentImageIndex)
 })
 
 for (let i = 0; i < items.length; i++) {
@@ -69,7 +79,8 @@ for (let i = 0; i < items.length; i++) {
 	items.eq(i).on("click", () => {
 		currentImageIndex = i;
 		lightboxImage.attr("src", picturesList[i].url);
-		lightbox.attr('style', 'display: block');
+		// lightbox.attr('style', 'display: block');
+		console.log(lightbox[0].classList.add("visible"))
 		textField.html(picturesList[i].alt)
 		console.log(picturesList[i].alt)
 	});
