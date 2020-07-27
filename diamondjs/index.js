@@ -1,118 +1,97 @@
-const picturesList = [
-	{
-		url: "https://i.imgur.com/e6Ij0Bl.jpg",
-		alt: "girls are like glass of wine"
+const animeList = [{
+		title: "Клинок, рассекающий демонов",
+		url: "https://animego.org/anime/klinok-rassekayuschiy-demonov-902",
+		picture: "https://animego.org/upload/anime/images/5ca8e16ebd092601180598.jpg",
+		description: "Эпоха «Тайсё» была полна неожиданностей. Много легенд нашли свое логическое подтверждение в те года. Люди давненько стали думать о присутствии демонов в гущах леса. И эти существа были крайне опасны и кровожадны. В ночное время суток они вели охоту на людей, убивая невинных граждан, демоны питались их плотью. Однако со временем эти легенды стали больше напоминать сказки. Подобных инцидентов в лесах не происходило, люди перестали верить. И было это зря, ведь несколько лет назад с отцом главного героя – Танджиро Камадо случилась неприятность."
+	}, {
+		title: "Пламенная бригада пожарных",
+		url: "https://animego.org/anime/enen-no-shouboutai-1102",
+		picture: "https://animego.org/upload/anime/images/5d8f871a5e757670575093.jpg",
+		description: "В Токио разворачивается череда трагедий. Люди возгораются без причины, превращаясь в живой столб огня. Они получили название «инферналы». Первые появления этих существ внесли хаос и страх в жизнь города, но стоило только привыкнуть к ним, те начали эволюционировать. Они научились управлять силой огня, оставляя человеческое обличье. Среди таких людей оказался парень по имени Синра Кусакабэ. Он способен воспламенить по желанию собственные ноги, за что обрел кличку «Дьявольские Ступни».",
 	},
 	{
-		url: "https://i.imgur.com/pMhIsqv.jpg",
-		alt: "cars > chicks"
+		title: "Охотник х Охотник",
+		url: "https://animego.org/anime/ohotnik-h-ohotnik-279",
+		picture: "https://animego.org/upload/anime/images/5a70915db832b.jpg",
+		description: "В мире существуют хищники и охотники. Только избранные могут убивать и реализовывать план кровной мести. Гон Фрикс – двенадцатилетний парнишка, обитающий на Китовом острове, который прекрасно знает все существующие истины. Охотничье братство – невероятно могущественное сообщество, которое очень тщательно отбирает кандидатов. Главный герой, как любой подросток, безумно хочет сдать экзамен и превратиться в бесстрашного Охотника. Однако тётя Мито, воспитывающая сироту, старается сдержать мальчугана, чтобы он не повторил судьбу отца, бросившего своего сына.",
 	},
 	{
-		url: "https://i.imgur.com/PIPi4C4.jpg",
-		alt: "lofi ski-fi wanna be"
+		title: "Невероятное приключение ДжоДжо: Рыцари звёздной пыли 2",
+		url: "https://animego.org/anime/neveroyatnoe-priklyuchenie-dzhodzho-rycari-zvezdnoy-pyli-984",
+		picture: "https://animego.org/upload/anime/images/5ccc35c6270a2865736384.jpg",
+		description: "Семья Джостаров старается укрепить свои позиции и стать сильнее за счет поддержки могущественных бойцов на разных трех континентов. Им удалось достичь Египта, перед этим совершив непростое и очень опасное путешествие, которое шло через всю Азию. Теперь настает время неизбежной решающей битвы, где герою ДжоДжо, его деду и настоящих преданных друзей предстоит как следует наказать ужасного Дио. Он осмелился поднять руку на мать героя. Времени остается катастрофически мало, героям предстоит оказаться в Каире, но ведь туда еще нужно добраться, а сделать это не так просто, как может показаться. Им предстоит пробиться сквозь ряды жестоких врагов.",
 	},
 	{
-		url: "https://i.imgur.com/8OME5Af.jpg",
-		alt: "no heels no fun"
+		title: "Сага о Винланде",
+		url: "https://animego.org/anime/saga-o-vinlande-1089",
+		picture: "https://animego.org/upload/anime/images/5d8f86db39318930257463.jpg",
+		description: "За тысячу лет викинги сделали себе имя и репутацию сильнейших племен, жаждущих насилия и мести.Торфинн — сын одного из величайших воинов-викингов. В детстве он потерял своего отца во время схватки с дружиной, возглавляемой Аскеладдом. Полный мести, Торфинн поклялся, что убьёт Аскеладда в честном бою. Однако ему не хватало навыков, чтобы одолеть душегуба. От клятвы юноша отказываться не желал, поэтому решил присоединиться к дружине своего врага, чтобы в скором времени отомстить главарю. Вскоре жизнь Торфинна становится более захватывающей и кровавой, ведь цель Аскеладда — корона Англии.",
 	},
 	{
-		url: "https://i.imgur.com/ia8yzTa.jpg",
-		alt: "wish i could play with japanese kids"
+		title: "Волейбол!!",
+		url: "https://animego.org/anime/voleybol-256",
+		picture: "https://animego.org/upload/anime/images/5a6b3b1186cef.jpg",
+		description: "Шоё Хината решает серьезно заняться волейболом, после того, как несколько раз посмотрел эту игру. Теперь он исполняет свою мечту, создав настоящую волейбольную команду. Спустя три года, они добиваются доселе невиданного для себя успеха – попадают на крупный спортивный турнир. Несмотря на отсутствие опыта, Хината надеется на успех. Но им не везет со жребием, и в первом же круге команде предстоит сыграть с сильной командой. Плеймейкер этой команды практически в одиночку разбивает соперника. После такого разгрома, Хината надеется на реванш.",
 	},
 	{
-		url: "https://i.imgur.com/W0rqy3I.jpg",
-		alt: "altText"
+		title: "Твоё имя",
+		url: "https://animego.org/anime/tvoe-imya-107",
+		picture: "https://animego.org/upload/anime/images/5a401b086331f.jpg",
+		description: "Действие в аниме Твое имя будет происходить в двух городах. Главными героями является парочка обычных людей, которые даже не подозревают, что вскоре судьба свяжет их жизни очень крепко. Они никогда не были знакомы, она – любимая дочь, которая свое свободное время посвящает работе в храме. Он – надежный друг, успешен и трудолюбив на работе, имеет неплохие задатки талантливого художника. Ее жизнь спокойна и размерена в небольшом провинциальном городке, в то время как он живет в огромном мегаполисе, полном суматохи и постоянном бегстве.",
 	},
 	{
-		url: "https://i.imgur.com/OTFD2Hx.jpg",
-		alt: "altText"
+		title: "Стальной алхимик: Братство",
+		url: "https://animego.org/anime/stalnoy-alhimik-bratstvo-126",
+		picture: "https://animego.org/upload/anime/images/5a47ae2e45700.jpg",
+		description: "Братья Элрики отчаянно хотели воскресить погибшую маму, поэтому рискнули пренебречь непоколебимым правилом Алхимии, касающимся возрождения человека. В момент проведения запретного ритуала события начали разворачиваться по незапланированному сценарию. В результате финал оказался совершенно непредсказуемым. Альфонс полностью лишился плоти, а его душа стала пленницей железных доспехов. Эдвард также заплатил за свои деяния и лишился руки и ноги. Теперь парнишка вынужден пользоваться автоброней – специальным стальным обмундированием. Постепенно одарённый Эдвард превратился в государственного алхимика, став достойным представителем влиятельной военной машины своего государства. Но, несмотря на грандиозные достижения, персонаж не был счастлив, ведь он неустанно старался сделать так, чтобы его младший брат вернул себе прежний образ, а к нему его части тела. Служба в могущественной системе страны даёт родственникам большие привилегии, а также безграничный доступ к любой информации. Вскоре герои узнают о могущественном камне и отправляются на его поиски. Они даже не подозревают, какие испытания их ждут впереди.",
 	},
-	{
-		url: "https://i.imgur.com/olNcEUt.jpg",
-		alt: "altText"
-	},
-	{
-		url: "https://i.imgur.com/SBXwpPg.png",
-		alt: "altText"
-	},
-];
+]
 
-for (let i = 0; i < picturesList.length; i++) {
+for (let i = 0; i < animeList.length; i++) {
 	$(".demo").append('<a href="#" class="item"></a>');
 }
 
 $(".demo").diamonds({
 	size: 200,
-	gap: 2,
+	gap: 3,
 	hideIncompleteRow: false, // default: false
 	autoRedraw: true, // default: true
 	itemSelector: ".item"
 });
 
-let items = $("a");
-let lightbox = $(".lightbox");
-let lightboxImage = $(".lightboxImage");
-let textField = $("#alt-text");
-lightbox.on("click", () => lightbox[0].classList.remove("visible"));
+let items = $(".item");
+$(".lightbox").on("click", () => $(".lightbox")[0].classList.remove("visible"));
+$(".lightboxImage").click((e) => e.stopPropagation());
+$("#title").click((e)=>e.stopPropagation());
+$("#description").click((e)=>e.stopPropagation());
 let currentImageIndex;
 
-$(".nav-button").click((e)=> {
+const updateInfo = (index) => {
+	let currentItem = animeList[index]
+	$(".lightboxImage").attr("src", currentItem.picture);
+	$("#title h3").html(currentItem.title)
+	let description = currentItem.description
+	description = description.length > 500 ? description.slice(0,500) + "..." : description
+	$("#description").html(description)
+	$("#title").attr("href", currentItem.url)
+}
+
+$(".nav-button").click((e) => {
 	e.stopPropagation();
-	console.log(e.target);
 	if (e.target.classList.contains("nav-button-next")) {
-		currentImageIndex = currentImageIndex === picturesList.length-1 ? 0 : currentImageIndex + 1;
+		currentImageIndex = currentImageIndex === animeList.length - 1 ? 0 : currentImageIndex + 1;
 	} else if (e.target.classList.contains("nav-button-prev")) {
-		currentImageIndex = currentImageIndex ===  0 ? picturesList.length-1 : currentImageIndex - 1;
+		currentImageIndex = currentImageIndex === 0 ? animeList.length - 1 : currentImageIndex - 1;
 	}
-	lightboxImage.attr("src", picturesList[currentImageIndex].url)
-	textField.html(picturesList[currentImageIndex].alt)
-
+	updateInfo(currentImageIndex)
 })
 
-lightboxImage.click((e) => {
-	e.stopPropagation();
-	console.log(currentImageIndex)
-})
 
 for (let i = 0; i < items.length; i++) {
-	items[i].style.backgroundImage = `url(${picturesList[i].url})`;
+	items[i].style.backgroundImage = `url(${animeList[i].picture})`;
 	items.eq(i).on("click", () => {
 		currentImageIndex = i;
-		lightboxImage.attr("src", picturesList[i].url);
-		// lightbox.attr('style', 'display: block');
-		console.log(lightbox[0].classList.add("visible"))
-		textField.html(picturesList[i].alt)
-		console.log(picturesList[i].alt)
+		$(".lightbox")[0].classList.add("visible")
+		updateInfo(i)
 	});
 };
-
-// fetch("https://api.unsplash.com/photos/?client_id=s1tEk9HM7KpHHAirgZalHUGNra5LML9DRgXZsZYVATk")
-// 	.then(response => response.json())
-// 	.then(json => {
-// 		let picturesList = json.map(array => array.urls.full);
-// 		for (let i = 0; i < picturesList.length; i++) {
-// 			$(".demo").append('<a href="#" class="item"></a>');
-// 		}
-
-// 		$(".demo").diamonds({
-// 			size: 200,
-// 			gap: 2,
-// 			hideIncompleteRow: false, // default: false
-// 			autoRedraw: true, // default: true
-// 			itemSelector: ".item"
-// 		});
-
-// 		let items = $("a");
-// 		let lightbox = $(".lightbox");
-// 		let lightboxImage = $(".lightboxImage");
-// 		lightboxImage.on("click", () => lightbox.attr('style', 'display: none'));
-
-// 		for (let i = 0; i < items.length; i++) {
-// 			items[i].style.backgroundImage = `url(${picturesList[i]})`;
-// 			console.log(items.eq(i));
-// 			items.eq(i).on("click", () => {
-// 				lightboxImage.attr("src", picturesList[i]);
-// 				lightbox.attr('style', 'display: block');
-// 			});
-// 		};
-// 	})	

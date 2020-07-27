@@ -11,7 +11,6 @@ body, html {
 a {
 	color: inherit;
 	text-decoration: none;
-	border-bottom: 1px solid rgba(150, 150, 150, 0.7);
 }
 .lightbox {
 	position: fixed;
@@ -30,10 +29,10 @@ a {
 }
 .lightbox img {
 	margin: auto;
-	height: 90%;
+	height: 80%;
 
 }
-.buttons {
+.menu {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -48,6 +47,7 @@ a {
 	border: none;
 	font-size: 30px;
 }
+
 .nav-button{
 	
 	font-size: 40px;
@@ -65,9 +65,24 @@ a {
 	border:1px solid #AAA;
 	color:#AAA;
 }
-#alt-text { 
+#info { 
 	color:white;
 	font-size: large;
+}
+#description, #title {
+	display: inline-block;
+	margin: 0px 20px;
+}
+#title h3 {
+	margin: 0.5rem;
+	/* text-decoration: underline; */
+	border-bottom: 1px solid #000;
+
+}
+#description {
+	text-align: justify;
+	font-size: 16px;
+	line-height: 1.3em;
 }
 .item {
 	display: block;
@@ -88,4 +103,8 @@ a {
 }
 #close-button {
 	cursor: pointer;
+}
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
 }
